@@ -8,11 +8,20 @@ $color-white:#fff;
 body{
     font-family: 'Poppins', sans-serif;
 }
-.hero-banner{
+.hero{
     width: 100%;
     height: 600px;
     background-image: url("../../images/header.png");
     clip-path: polygon(0 0, 100% 0,100% 80%,0% 100%);
+    &_title{
+        font-family: "Merienda";
+        font-size: 100px;
+        font-weight: bold;
+    }
+    &_subtitle{
+        font-size: 20px;
+        letter-spacing: 6px;
+    }
 }
 .overlay{
     display: flex;
@@ -23,19 +32,11 @@ body{
     height: 100%;
     background-color: rgba($color: #000,$alpha: 0.5);
 }
-.hero-container{
+.title-container{
     text-align: center;
     color: $color-white;
 }
-.hero-title{
-    font-family: "Merienda";
-    font-size: 100px;
-    font-weight: bold;
-}
-.hero-subtitle{
-    font-size: 20px;
-    letter-spacing: 6px;
-}
+
 .navbar{
     display: flex;
     justify-content: center;
@@ -111,11 +112,40 @@ figure{
     display: flex;
     width: 100px;
     height: 100px;
-    color: $color-whitef;
+    color: $color-white;
     border-radius: 50%;
     background:$primary-color;
     i{
         font-size: 40px;
         margin: auto;
+    }
+}
+.offer{
+    width: 100%;
+    height: 500px;
+    background: url("../../images/offer.png");
+    &_title{
+        font-weight: 600;
+        font-size: 50px;
+        text-transform: uppercase;
+    }
+    &_subtitle{
+        font-weight: 300;
+        letter-spacing:5px;
+    }
+}
+
+.offer-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: $primary-color;
+    background-color: $color-white;
+    padding: 10px  25px;
+    margin-top: 15px;
+    border-radius: 27px;
+    transition: 0.4s all;
+    &:hover{
+        background-color:$primary-color;
+        color: $color-white;
     }
 }
