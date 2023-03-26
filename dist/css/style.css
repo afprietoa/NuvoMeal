@@ -60,7 +60,7 @@ body {
   color: #689f38;
 }
 
-.about {
+.about, .menu {
   padding: 80px 0;
 }
 
@@ -73,12 +73,21 @@ body {
 }
 
 h2 {
+  margin-bottom: 70px;
   text-transform: uppercase;
   font-size: 35px;
   color: #333;
 }
 
+h3 {
+  color: #444;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
 h4 {
+  color: #444;
   text-transform: uppercase;
   font-size: 25px;
   font-weight: 600;
@@ -161,6 +170,19 @@ figure .back {
 .offer-btn:hover {
   background-color: #689f38;
   color: #fff;
+}
+
+.list {
+  list-style: none;
+}
+.list_item {
+  display: flex;
+  justify-content: space-between;
+  color: #707070;
+  line-height: 50px;
+}
+.list_price {
+  color: #689f38;
 }
 
 /*# sourceMappingURL=style.css.map */
