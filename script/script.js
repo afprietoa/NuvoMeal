@@ -71,7 +71,7 @@ function runFilter() {
 
             const mealButton = document.createElement('BUTTON');
             mealButton.classList.add('btn', 'btn-danger', 'w-100');
-            mealButton.textContent = 'show recipe';
+            mealButton.textContent = 'show detail';
 
             mealButton.onclick = function() {
                 selectMeal(idMeal ?? meal.id);
