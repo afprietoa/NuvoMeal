@@ -1,0 +1,34 @@
+.footer{
+    background: #222;
+    color: $color-white;
+
+}
+.brand{
+    font-family: "Merienda";
+}
+.social-icons{
+    list-style:none;
+    display: flex;
+    li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: $primary-color;
+        margin-right: 20px;
+        &:hover{
+            background: $color-white;
+            color: $primary-color;
+        }
+    }
+    }
+    .payment-icons{
+        list-style: none;
+        display: flex;
+        li{
+            margin-right: 20px;
+        }
+    }
