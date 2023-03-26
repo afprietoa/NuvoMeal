@@ -8,16 +8,62 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.main-header {
+.hero-banner {
   width: 100%;
   height: 600px;
   background-image: url("../../images/header.png");
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
 }
 
 .overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-container {
+  text-align: center;
+  color: #fff;
+}
+
+.hero-title {
+  font-family: "Merienda";
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  letter-spacing: 6px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: auto;
+  background: rgba(255, 255, 255, 0.8);
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+.navbar ul a {
+  display: block;
+  padding: 20px;
+  color: #333;
+  text-decoration: none;
+}
+.navbar ul a.active {
+  color: #689f38;
+}
+
+.mb_auto {
+  margin-bottom: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
