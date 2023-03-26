@@ -16,6 +16,30 @@
     &_user{
         font-size: 20px;
         font-weight: 400;
-        color: $primary-color;
+        color: $secondary-color;
     }
 }
+.testimonial-content {
+    padding: 10rem 2rem;
+
+    .testimonial-list{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        .testimonial-item {
+            background-color: #ebe7de;
+            padding: 2rem 4rem;
+            max-width: 25rem;
+            margin: 0 auto;
+            border-radius: 1rem;
+    
+            .author {
+                text-align: right;
+                font-size: 1.2rem;
+                color: $primary-color;
+                font-family: 'Roboto', sans-serif;
+            }
+        }
+    }
+}
+

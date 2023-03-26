@@ -13,25 +13,14 @@
         letter-spacing: 6px;
     }
 }
+.hero-menu{
+    height: 400px;
+    background: no-repeat center/cover url("../../images/menu.jpg");
+    clip-path: none;
 
-.navbar{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: auto;
-    background: rgba($color: $color-white, $alpha: 0.8);
-    ul{
-        list-style: none;
-        display: flex;
-        a{
-            display: block;
-            padding: 20px;
-            color: #333;
-            text-decoration: none;
-
-            &.active{
-                color: $primary-color;
-            }
-        }
-    }
+}
+.hero-form{
+    height: 400px;
+    background: no-repeat center/cover url("../../images/form.jpg");
+    clip-path: none;
 }
