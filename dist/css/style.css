@@ -1,69 +1,17 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+/* Error: Undefined variable.
+ *     ,
+ * 114 |     color: $color-whitef;
+ *     |            ^^^^^^^^^^^^^
+ *     '
+ *   sass\style.scss 114:12  root stylesheet */
 
-body {
-  font-family: "Poppins", sans-serif;
-}
-
-.hero-banner {
-  width: 100%;
-  height: 600px;
-  background-image: url("../../images/header.png");
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
-}
-
-.overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.hero-container {
-  text-align: center;
-  color: #fff;
-}
-
-.hero-title {
-  font-family: "Merienda";
-  font-size: 100px;
-  font-weight: bold;
-}
-
-.hero-subtitle {
-  font-size: 20px;
-  letter-spacing: 6px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: auto;
-  background: rgba(255, 255, 255, 0.8);
-}
-.navbar ul {
-  list-style: none;
-  display: flex;
-}
-.navbar ul a {
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
   display: block;
-  padding: 20px;
-  color: #333;
-  text-decoration: none;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a     \2577 \a 114 \2502      color: $color-whitef;\d\a     \2502             ^^^^^^^^^^^^^\a     \2575 \a   sass\\style.scss 114:12  root stylesheet";
 }
-.navbar ul a.active {
-  color: #689f38;
-}
-
-.mb_auto {
-  margin-bottom: auto;
-}
-
-/*# sourceMappingURL=style.css.map */
