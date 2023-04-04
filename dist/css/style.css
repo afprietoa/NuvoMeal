@@ -265,12 +265,45 @@ figure .back {
   max-width: 25rem;
   margin: 0 auto;
   border-radius: 1rem;
+  position: relative;
 }
-.testimonial-content .testimonial-list .testimonial-item .author {
+.testimonial-content .testimonial-list .testimonial-item_card {
+  width: 100%;
+  height: 100%;
+}
+.testimonial-content .testimonial-list .testimonial-item_card .author {
   text-align: right;
   font-size: 1.2rem;
   color: linear-gradient(to right bottom, #fbdb89, #f48982);
   font-family: "Roboto", sans-serif;
+}
+.testimonial-content .testimonial-list .testimonial-item_delete, .testimonial-content .testimonial-list .testimonial-item_edit {
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  display: none;
+  padding: 5px;
+}
+.testimonial-content .testimonial-list .testimonial-item_delete {
+  color: crimson;
+}
+.testimonial-content .testimonial-list .testimonial-item_delete:hover {
+  transform: scale(0.8);
+  cursor: pointer;
+}
+.testimonial-content .testimonial-list .testimonial-item_edit {
+  color: darkgoldenrod;
+  right: 50px;
+}
+.testimonial-content .testimonial-list .testimonial-item_edit:hover {
+  transform: scale(0.8);
+  cursor: pointer;
+}
+.testimonial-content .testimonial-list .testimonial-item:hover .testimonial-item_delete, .testimonial-content .testimonial-list .testimonial-item:hover .testimonial-item_edit {
+  display: block;
 }
 
 .footer {
@@ -336,8 +369,7 @@ label {
 }
 
 input[type=text],
-input[type=email],
-input[type=password],
+textarea,
 input:not([type=submit]),
 select {
   padding: 10px;

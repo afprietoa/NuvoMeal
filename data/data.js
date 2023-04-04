@@ -1,4 +1,4 @@
-export const comments = [
+export const opinions = [
     {
       id: 1,
       name: "Juan Poe",
@@ -18,3 +18,4 @@ export const comments = [
         date: "2023-10-11",
     } 
   ];
+  
