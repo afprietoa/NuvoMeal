@@ -16,34 +16,12 @@ const submitBtn = document.querySelector('.submit');
 
 const valuesForm = Object.values(form);
 
-  const editFormStr = sessionStorage.getItem("editItem")
-  ? JSON.parse(sessionStorage.getItem("editItem"))
-  : "";
-
-  const editForm = editFormStr ? parseInt(editFormStr) : null;
 
   let comments = sessionStorage.getItem('comments')
   ? JSON.parse(sessionStorage.getItem('comments'))
   : [];
 
-  const editComment = editForm
-  ? comments.find((comment) => comment.id === editForm)
-  : null;
 
-  title.innerText = editForm
-  ? `Update comment of ${editComment.name}`
-  : "Add new comment";
-
-  submitBtn.innerHTML = editForm ? "Save message" : "Create message";
-
-  if (editForm && editComment) {
-    
-    valuesForm.forEach((valueInput) => {
-      if (valueInput.id) {
-        valueInput.value = editComment[valueInput.id];
-      }
-    });
-  }
 
 
 
@@ -51,11 +29,25 @@ const valuesForm = Object.values(form);
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 
+
 	const newComment ={
 		name:names.value !== '' ? names.value : errorFunc('name', 'Please, Enter your name.'),
 		comment:comment.value !== '' ? comment.value : errorFunc('comment', 'Please, Enter your comment.'),
 		date:date.value !== '' ? date.value : errorFunc('date', 'Please, Enter a date.'),
 	}
+
+  const editFormStr = sessionStorage.getItem("editComment")
+  ? JSON.parse(sessionStorage.getItem("editComment"))
+  : "";
+
+  const editForm = editFormStr ? parseInt(editFormStr) : null;
+
+  const editComment = editForm
+  ? comments.find((comment) => comment.id === editForm)
+  : null;
+    
+    //Crear una propiedad id
+    newComment.id = editForm ? editComment.id : comments.length + 1;
 
 	if (!document.querySelectorAll('.invalid').length) {
         Swal.fire(
@@ -78,12 +70,26 @@ form.addEventListener('submit', (e) => {
 
     comments[commentIndex] = newComment;
 
+    //Print the cards again
+    printCards(comments, container);
+    
+    editForm=null;
+
+    title.innerText = editForm
+    ? `Update comment of ${editComment.name}`
+    : "Add new comment";
+  
+    submitBtn.innerHTML = editForm ? "Update comment" : "Create comment";
+
     // console.log(comments);
   } else {
 
     comments.push(newComment);
 
     // console.log(comments);
+
+    //Print the cards again
+    printCards(comments, container);
   }
 
 
@@ -175,5 +181,35 @@ document.addEventListener("click", (event) => {
   if (target.classList.contains("testimonial-item_edit")) {
     console.log(target.name);
     sessionStorage.setItem("editComment", JSON.stringify(target.name));
+
+
+    const editFormStr = sessionStorage.getItem("editComment")
+    ? JSON.parse(sessionStorage.getItem("editComment"))
+    : "";
+  
+    const editForm = editFormStr ? parseInt(editFormStr) : null;
+  
+    const editComment = editForm
+    ? comments.find((comment) => comment.id === editForm)
+    : null;
+
+
+    title.innerText = editForm
+    ? `Update comment of ${editComment.name}`
+    : "Add new comment";
+  
+    submitBtn.innerHTML = editForm ? "Update comment" : "Create comment";
+    
+    console.log(editForm)
+    console.log(editComment)
+  
+    if (editForm && editComment) {
+      
+      valuesForm.forEach((valueInput) => {
+        if (valueInput.id) {
+          valueInput.value = editComment[valueInput.id];
+        }
+      });
+    }
   }
 });
