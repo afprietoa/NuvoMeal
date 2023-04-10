@@ -126,7 +126,7 @@ function runFilter() {
                 ingredientLi.classList.add('list-group-item');
                 ingredientLi.textContent = `${ingredient} - ${quantity}`
 
-                listGroup.appendChild(ingredienteLi);
+                listGroup.appendChild(ingredientLi);
             }
         }
 
